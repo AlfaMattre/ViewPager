@@ -12,11 +12,11 @@ class TabPagerAdapter(fm: FragmentManager, private var tabCount: Int) :
 
     override fun getItem(position: Int): Fragment? {
 
-        when (position) {
-            0 -> return Tab1Fragment()
-            1 -> return Tab2Fragment()
-            2 -> return Tab3Fragment()
-            else -> return null
+        return when (position) {
+            0 -> Tab1Fragment()
+            1 -> Tab2Fragment()
+            2 -> Tab3Fragment()
+            else -> null
         }
     }
 

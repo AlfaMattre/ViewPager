@@ -28,11 +28,11 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     private val images = intArrayOf(
         R.drawable.cropped_min,
         R.drawable.jacket_min, R.drawable.long_min,
-        R.drawable.red_hoodie_min
+        R.drawable.red_min
     )
 
     private val titles = arrayOf("cropped_min",
-        "jacket_min", "long_min", "red_hoodie_min")
+        "jacket_min", "long_min", "red_min")
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var itemTitle: TextView

@@ -1,9 +1,10 @@
 package com.example.smartfort.viewpager.activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.TabLayout
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_tab_layout_demo.*
 import android.view.animation.Animation
@@ -16,11 +17,7 @@ import android.view.animation.AccelerateInterpolator
 import com.example.smartfort.viewpager.R
 import com.example.smartfort.viewpager.adaptor.TabPagerAdapter
 
-
 class TabLayoutDemoActivity : AppCompatActivity() {
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,11 +25,9 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         initListeners()
         configureTabLayout()
-
-
     }
 
-    fun initListeners(){
+    private fun initListeners(){
         fab.setOnClickListener { view ->
             Snackbar.make(view, getString(R.string.activity_main_snackbar_message), Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
@@ -54,7 +49,7 @@ class TabLayoutDemoActivity : AppCompatActivity() {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 pager.currentItem = tab.position
 
-                animateFab(tab.getPosition())
+                animateFab(tab.position)
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
@@ -65,6 +60,7 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("PrivateResource")
     var colorIntArray = intArrayOf(
         R.color.accent_material_dark,
         R.color.accent_material_light,
@@ -76,11 +72,10 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         R.drawable.ic_launcher_background
     )
 
-    protected fun animateFab(position: Int) {
+    private fun animateFab(position: Int) {
         fab.clearAnimation()
 
-        val shrink =
-            ScaleAnimation(1f, 0.1f, 1f, 0.1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+        val shrink = ScaleAnimation(1f, 0.1f, 1f, 0.1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
         shrink.duration = 100     // animation duration in milliseconds
         shrink.interpolator = AccelerateInterpolator()
         shrink.setAnimationListener(object : Animation.AnimationListener {
