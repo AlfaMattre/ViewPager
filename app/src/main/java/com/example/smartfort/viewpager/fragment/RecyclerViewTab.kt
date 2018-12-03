@@ -10,9 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.smartfort.viewpager.R
 import com.example.smartfort.viewpager.adaptor.RecyclerAdapter
-import kotlinx.android.synthetic.main.fragment_tab1.view.*
+import kotlinx.android.synthetic.main.fragment_recycler_view.view.*
 
-class Tab1Fragment : Fragment() {
+class RecyclerViewTab : Fragment() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
@@ -21,7 +21,7 @@ class Tab1Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_tab1, container,  false)
+        val view = inflater.inflate(R.layout.fragment_recycler_view, container,  false)
 
         layoutManager = LinearLayoutManager(context)
         view.recycler_view.layoutManager = layoutManager

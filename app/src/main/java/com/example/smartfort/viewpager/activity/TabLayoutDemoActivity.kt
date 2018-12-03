@@ -16,7 +16,6 @@ import android.support.v4.content.ContextCompat
 import android.view.animation.AccelerateInterpolator
 import com.example.smartfort.viewpager.R
 import com.example.smartfort.viewpager.adaptor.TabPagerAdapter
-import com.example.smartfort.viewpager.fragment.Tab1Fragment
 
 class TabLayoutDemoActivity : AppCompatActivity() {
 

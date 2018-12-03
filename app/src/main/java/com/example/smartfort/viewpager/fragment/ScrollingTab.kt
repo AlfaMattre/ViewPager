@@ -8,13 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.smartfort.viewpager.R
 
-class Tab2Fragment : Fragment() {
+class ScrollingTab : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab2, container, false)
+        return inflater.inflate(R.layout.fragment_scrolling_tab, container, false)
     }
 }
