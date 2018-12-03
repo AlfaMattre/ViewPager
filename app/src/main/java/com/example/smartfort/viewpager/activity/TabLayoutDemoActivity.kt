@@ -16,6 +16,7 @@ import android.support.v4.content.ContextCompat
 import android.view.animation.AccelerateInterpolator
 import com.example.smartfort.viewpager.R
 import com.example.smartfort.viewpager.adaptor.TabPagerAdapter
+import com.example.smartfort.viewpager.fragment.Tab1Fragment
 
 class TabLayoutDemoActivity : AppCompatActivity() {
 
@@ -34,10 +35,14 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         }
     }
 
+    private fun addTab(value: String){
+        tab_layout.addTab(tab_layout.newTab().setText(value))
+    }
+
     private fun configureTabLayout() {
-        tab_layout.addTab(tab_layout.newTab().setText("Tab 1 Item"))
-        tab_layout.addTab(tab_layout.newTab().setText("Tab 2 Item"))
-        tab_layout.addTab(tab_layout.newTab().setText("Tab 3 Item"))
+        addTab("Tab1")
+        addTab("Tab2")
+        addTab("Tab3")
 
         pager.adapter = TabPagerAdapter(
             supportFragmentManager,
@@ -48,7 +53,6 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 pager.currentItem = tab.position
-
                 animateFab(tab.position)
             }
 
@@ -76,7 +80,7 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         fab.clearAnimation()
 
         val shrink = ScaleAnimation(1f, 0.1f, 1f, 0.1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
-        shrink.duration = 100     // animation duration in milliseconds
+        shrink.duration = 100
         shrink.interpolator = AccelerateInterpolator()
         shrink.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation) {
@@ -107,7 +111,7 @@ class TabLayoutDemoActivity : AppCompatActivity() {
                 expand.duration = 150
                 expand.interpolator = DecelerateInterpolator()
 
-                val s = AnimationSet(false) //false means don't share interpolators
+                val s = AnimationSet(false)
                 s.addAnimation(rotate)
                 s.addAnimation(expand)
                 fab.startAnimation(s)
