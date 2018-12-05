@@ -3,6 +3,7 @@ package com.example.smartfort.viewpager.adaptor
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -43,11 +44,10 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemImage = itemView.findViewById(R.id.item_image)
             itemTitle = itemView.findViewById(R.id.item_title)
 
-            itemView.setOnClickListener { v: View  ->
+            itemView.setOnClickListener { view: View  ->
                 val position: Int = adapterPosition
 
-                Snackbar.make(v, "Click detected on item $position",
-                    Snackbar.LENGTH_LONG).setAction("Action", null).show()
+
             }
         }
     }

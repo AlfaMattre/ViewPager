@@ -27,8 +27,6 @@ class RecyclerViewTab : Fragment() {
         view.recycler_view.layoutManager = layoutManager
 
         adapter = RecyclerAdapter()
-
-        adapter = RecyclerAdapter()
         view.recycler_view.adapter = adapter
 
         return view

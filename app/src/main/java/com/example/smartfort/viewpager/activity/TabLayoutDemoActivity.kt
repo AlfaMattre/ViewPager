@@ -2,10 +2,8 @@ package com.example.smartfort.viewpager.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
-
 import kotlinx.android.synthetic.main.activity_tab_layout_demo.*
 import android.view.animation.Animation
 import android.view.animation.AnimationSet
@@ -23,15 +21,7 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_layout_demo)
         setSupportActionBar(toolbar)
-        initListeners()
         configureTabLayout()
-    }
-
-    private fun initListeners(){
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, getString(R.string.activity_main_snackbar_message), Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
     }
 
     private fun addTab(value: String){
@@ -52,6 +42,7 @@ class TabLayoutDemoActivity : AppCompatActivity() {
         tab_layout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 pager.currentItem = tab.position
+                fab.show()
                 animateFab(tab.position)
             }
 
