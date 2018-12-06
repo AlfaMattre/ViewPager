@@ -4,4 +4,5 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="path">com.example.smartfort.viewpager.ui.ScrollAwareFABBehavior</string>
+    <string name="title_activity_item">ItemActivity</string>
 </resources>

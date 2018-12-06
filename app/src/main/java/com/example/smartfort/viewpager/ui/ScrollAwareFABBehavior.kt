@@ -31,7 +31,6 @@ class ScrollAwareFABBehavior(context: Context, attrs: AttributeSet): FloatingAct
                     fab.visibility = View.INVISIBLE
                 }
             })
-            // } else if (dyUnconsumed < 0 && child.visibility != View.VISIBLE) {
         } else if (dyConsumed < 0 && child.visibility != View.VISIBLE) {
             child.show()
         }
